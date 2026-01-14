@@ -13,7 +13,7 @@ function ToDo() {
     const inputAdd = useRef(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/tasks')
+        fetch('https://todo-backend-yvcf.onrender.com/tasks')
             .then(res => res.json())
             .then(data => setTasks(data));
         if (inputAdd.current)
@@ -29,7 +29,7 @@ function ToDo() {
     const handleAddTask = () => {
         if (!newTask) return;
         const taskData = { text: newTask, done: false };
-        fetch('http://localhost:3001/tasks', {
+        fetch('https://todo-backend-yvcf.onrender.com/tasks', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(taskData)
@@ -47,7 +47,7 @@ function ToDo() {
     };
 
     const handleEditSave = () => {
-        fetch(`http://localhost:3001/tasks/${editId}`,
+        fetch(`https://todo-backend-yvcf.onrender.com/tasks${editId}`,
             {
                 method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
@@ -64,17 +64,17 @@ function ToDo() {
     };
 
     const handleToggleDone = (id, done) => {
-        fetch(`http://localhost:3001/tasks/${id}`, {
+        fetch(`https://todo-backend-yvcf.onrender.com/tasks${id}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ done: !done })
         })
-            .then(res => res.json)
+            .then(res => res.json())
             .then(() => setTasks(tasks.map(t => t.id === id ? { ...t, done: !done } : t)));
     };
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3001/tasks/${id}`, {
+        fetch(`https://todo-backend-yvcf.onrender.com/tasks${id}`, {
             method: 'DELETE'
         }).then(() => setTasks(tasks.filter(t => t.id !== id)));
     }
@@ -86,7 +86,7 @@ function ToDo() {
     return (
         <div className='container'>
             <header>
-                <input type="checkbox" checked readOnly />
+                <input type="checkbox" defaultChecked readOnly />
                 <span className="logo">ToDo App</span>
             </header>
             <div className="status-card">
