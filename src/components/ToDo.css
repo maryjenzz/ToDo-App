@@ -1,3 +1,10 @@
+:root {
+    --azul-escuro: #313851;
+    --azul-mais-escuro: #1f253e;
+
+    --azul-claro: #c2cbd3;
+    --branco: #f6f3ed;
+}
 .container {
     max-width: 500px;
     margin: 30px auto;
@@ -14,7 +21,7 @@ header {
 }
 
 input[type='checkbox']{
-    accent-color: #aecfd2;
+    accent-color: var(--branco);
     width: 30px;
     height: 30px;
 }
@@ -24,7 +31,7 @@ input[type='checkbox']{
 }
 
 .status-card {
-    border: 1px solid #f09b20;
+    border: 1px solid var(--branco);
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -43,8 +50,8 @@ input[type='checkbox']{
 }
 
 .circle {
-    background-color: #f09b20;
-    color: #25515d;
+    background-color: var(--branco);
+    color: var(--azul-escuro);
     border-radius: 50%;
     width: 90px;
     height: 90px;
@@ -69,9 +76,9 @@ input[type='checkbox']{
 
 .add-task input ,
 .edit-task input {
-    background-color: #173740;
-    border: none;
-    color: #aecfd2;
+    background-color: var(--azul--mais-escuro);
+    border: 1px solid var(--branco);
+    color: var(--azul-claro);
     padding: 12px;
     border-radius: 6px;
     width: 100%;
@@ -80,8 +87,8 @@ input[type='checkbox']{
 
 .add-task button,
 .edit-task button {
-    background-color: #f09b20;
-    color: #25515d;
+    background-color: var(--branco);
+    color: var(--azul-escuro);
     border: none;
     padding: 0px 18px;
     border-radius: 8px;
@@ -95,5 +102,5 @@ input[type='checkbox']{
 
 .add-task button:hover,
 .edit-task button:hover {
-    background-color: #aecfd2;
+    background-color: var(--azul-claro);
 }

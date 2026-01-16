@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+:root {
+    --azul-escuro: #313851;
+    --azul-claro: #c2cbd3;
+    --branco: #f6f3ed;
+}
+
 body {
-  background-color: #25515d;
-  color: #aecfd2;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
   font-family: 'Inter', sans-serif;
 }
